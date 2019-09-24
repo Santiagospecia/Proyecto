@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <!--antes de el titulo, le indico que lo ponga al inicio del toolbar-->
+      <ion-back-button  defaultHref="/index"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center>Registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <br>
+  
+  <ion-chip color="warning">
+    <ion-icon name="md-car" color="primary"></ion-icon>
+    <ion-label color="primary" >COMO CONDUCTOR</ion-label>
+    <ion-icon name="md-arrow-round-forward" color="primary"></ion-icon>
+
+  </ion-chip>
+  <ion-chip color="warning">
+      <ion-icon name="md-people" color="primary"></ion-icon>
+    <ion-label color="primary">COMO EMPRESA</ion-label>
+    <ion-icon name="md-arrow-round-forward" color="primary"></ion-icon>
+
+  </ion-chip>
+
+  <ion-chip color="warning">
+      <ion-icon name="md-contact" color="primary"></ion-icon>
+    <ion-label color="primary">COMO USUARIO</ion-label>
+    <ion-icon name="md-arrow-round-forward" color="primary"></ion-icon>
+
+  </ion-chip>
+  <ion-item>
+    <ion-label position="floating"> Nombre </ion-label>
+    <ion-input type="text" name="nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> Apellido </ion-label>
+    <ion-input type="text" name="apellido"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> Email </ion-label>
+    <ion-input type="text" name="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> Contraseña </ion-label>
+    <ion-input type="password" name="contrseña"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> Repetir contraseña </ion-label>
+    <ion-input type="password" name="repcontraseña"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button expand="block"> Registrarse </ion-button>
+
+
+</ion-content>
