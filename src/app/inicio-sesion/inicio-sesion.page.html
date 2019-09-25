@@ -13,11 +13,17 @@
   <form >
   <ion-input type="text" placeholder="usuario o correo electronico" name="usuario"></ion-input>
   <ion-input type="password" name="contrseña" placeholder="Contraseña"></ion-input>
-  <ion-button expand="block"> Iniciar Sesión </ion-button>
+ 
+  <ion-button ion-button block type="submit">Ingresar</ion-button>
 </form>
 <br>
-<ion-label color="primary" text-right>¿Olvidaste tu contraseña? <ion-button> Recuperar </ion-button> </ion-label>
-<br>
-<ion-label color="primary">¿No tenes cuenta? </ion-label>
+<div text-center>
+  <a ion-button block clear >
+    Nueva cuenta
+  </a>
+  <br>
+  <a> <ion-button clear> Olvide mi contraseña</ion-button> </a>
 
+  
+</div>
 </ion-content>
