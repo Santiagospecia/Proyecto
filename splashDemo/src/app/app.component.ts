@@ -3,20 +3,30 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { ServicioService } from './inicio-sesion/servicio.service';
-
-
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  public appPages = [
+    {
+      title: 'Home',
+      url: '/home',
+      icon: 'home'
+    },
+    {
+      title: 'List',
+      url: '/list',
+      icon: 'list'
+    }
+  ];
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private servicioService: ServicioService /*agrego en el construrctor*/
+    private statusBar: StatusBar
   ) {
     this.initializeApp();
   }
@@ -27,5 +37,4 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
-
 }

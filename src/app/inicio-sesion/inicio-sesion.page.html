@@ -11,19 +11,18 @@
   <br>
   <ion-img src="/assets/img/logotipo2.PNG"></ion-img>
   <form >
-  <ion-input type="text" placeholder="usuario o correo electronico" name="usuario"></ion-input>
-  <ion-input type="password" name="contrseña" placeholder="Contraseña"></ion-input>
- 
-  <ion-button ion-button block type="submit">Ingresar</ion-button>
+  <ion-input type="text" #username placeholder=" Usuario o correo electronico" name="usuario"></ion-input>
+  <ion-input type="password" #password name="contrseña" placeholder=" Contraseña"></ion-input>
+  <!--Para no tener que poner en los inputs la etiqueta ngModel, podemos poner la abreviatura #.-->
+  <ion-button expand="block" color="primary" type="submit" id="login-button" (click)="logIn(username.value, password.value, $event)"> Ingresar </ion-button>
 </form>
 <br>
 <div text-center>
-  <a ion-button block clear >
-    Nueva cuenta
-  </a>
+  
+  <a> <ion-button fill="clear"> Olvide mi contraseña</ion-button> </a>
   <br>
-  <a> <ion-button clear> Olvide mi contraseña</ion-button> </a>
-
+  <a> <ion-button  fill="clear" > Nueva cuenta </ion-button> </a> 
+  
   
 </div>
 </ion-content>
