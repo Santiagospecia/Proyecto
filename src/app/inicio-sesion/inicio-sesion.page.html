@@ -2,27 +2,52 @@
   <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <!--antes de el titulo, le indico que lo ponga al inicio del toolbar-->
-      <ion-back-button  defaultHref="/index"></ion-back-button>
+      <ion-back-button defaultHref="/index"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <br>
-  <ion-img src="/assets/img/logotipo2.PNG"></ion-img>
-  <form >
-  <ion-input type="text" #username placeholder=" Usuario o correo electronico" name="usuario"></ion-input>
-  <ion-input type="password" #password name="contrseña" placeholder=" Contraseña"></ion-input>
-  <!--Para no tener que poner en los inputs la etiqueta ngModel, podemos poner la abreviatura #.-->
-  <ion-button expand="block" color="primary" type="submit" id="login-button" (click)="logIn(username.value, password.value, $event)"> Ingresar </ion-button>
-</form>
-<br>
-<div text-center>
-  
-  <a> <ion-button fill="clear"> Olvide mi contraseña</ion-button> </a>
-  <br>
-  <a> <ion-button  fill="clear" > Nueva cuenta </ion-button> </a> 
-  
-  
-</div>
+    <ion-img src="/assets/img/logotipo2.PNG"></ion-img>
+
+  <form class="container" [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <ion-input type="text" formControlName="iUsername" class="form-control" #username placeholder=" Usuario o correo electronico" [ngClass]="{ 'is-invalid': submitted && f.iUsername.errors}"></ion-input>
+      <div class="error-messages">
+          <ng-container *ngFor="let error of error_message.iUsername">
+            <div class="error-message" *ngIf="loginForm.get('iUsername').hasError(error.type) && (loginForm.get('iUsername').dirty || loginForm.get('iUsername').touched)"> 
+              {{error.message}}
+            </div>
+          </ng-container>
+        </div>
+    </div>
+    <div class="form-group">
+        <ion-input type="password" formControlName="iPassword" class="form-control" #password placeholder=" Contraseña" [ngClass]="{ 'is-invalid': submitted && f.iPassword.errors }"></ion-input> 
+        <div class="error-messages">
+            <ng-container *ngFor="let error of error_message.iPassword">
+              <div class="error-message" *ngIf="loginForm.get('iPassword').hasError(error.type) && (loginForm.get('iPassword').dirty || loginForm.get('iPassword').touched)"> 
+                {{error.message}}
+              </div>
+            </ng-container>
+          </div>
+      </div>
+
+
+    <!--Para no tener que poner en los inputs la etiqueta ngModel, podemos poner la abreviatura #.-->
+    <div class=form-group>
+      <ion-button expand="block" color="primary" type="submit" id="login-button"
+        (click)="logIn(username.value, password.value, $event)" [disabled]="loginForm.invalid"   > Ingresar </ion-button>
+    </div>
+  </form>
+    <br>
+    <div text-center>
+      <a>
+        <ion-button fill="clear"> Olvide mi contraseña</ion-button>
+      </a>
+      <br>
+      <a>
+        <ion-button fill="clear" routerLink="/register" > Nueva cuenta </ion-button>
+      </a>
+    </div>
 </ion-content>

@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { HttpParams } from '@angular/common/http';
 import { headersToString } from 'selenium-webdriver/http';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +12,7 @@ export class ServicioService {
 
   constructor(
     private http: HttpClient
-    ) { console.log('Hello Service ');
+    ) { console.log(' Hello Service ');
    }
 
 
@@ -21,7 +23,7 @@ export class ServicioService {
     encabezado.set('Access-Control-Allow-Origin', '*');
     parameters.set('username', username);
     parameters.set('password', password);
-    const ruta = 'http://192.168.0.144:8080/loginUser?username=' + username + '&password=' + password;
+    const ruta = 'http://3.14.63.150:8080/loginUser?username=' + username + '&password=' + password;
     console.log(ruta);
     return this.http.get(ruta, {headers: encabezado});
     // ,
