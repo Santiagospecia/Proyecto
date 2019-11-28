@@ -6,10 +6,7 @@ import { validator } from 'validator';
 import { CustomFormsModule } from 'ng2-validation'; // npm install ng2-validation --save
 import { RouterLink, RouterModule} from '@angular/router';
 import { TabsPage } from '../tabs/tabs.page';
-import { Tab1Page } from '../tab1/tab1.page';
-
-
-
+import { RouterTestingModule } from '@angular/router/testing';
 
 
 
@@ -62,7 +59,7 @@ export class InicioSesionPage implements OnInit {
     this.proveedorService.obtenerDatos(username, password).subscribe(
       res => {
         console.log(res);
-        this.navCtlr.navigateRoot('/questions');
+       // this.navCtlr.navigateRoot();
        },
        error => {
          console.error(error);

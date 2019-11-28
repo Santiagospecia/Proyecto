@@ -14,6 +14,7 @@ import { CustomFormsModule } from 'ng2-validation'; // npm install ng2-validatio
 
 
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
